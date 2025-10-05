@@ -11,16 +11,8 @@ import InputField from '../shared/InputField.vue'
 const { price, qty, amount, firstEdited, onFieldChange } = useCalculator()
 const { events, logEvent } = useEventLog()
 
-const {
-  isSubmitting,
-  localData,
-  submitResult,
-  getData,
-  getLSData,
-  submitData,
-  infoOnClick,
-  infoAfterClick,
-} = useLocalStorage()
+const { isSubmitting, localData, submitResult, getData, getLSData, submitData, infoAfterClick } =
+  useLocalStorage()
 
 function inputLog(field: Field, value: number) {
   onFieldChange(field, value)
