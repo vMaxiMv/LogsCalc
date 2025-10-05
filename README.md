@@ -1,48 +1,27 @@
-# vue-calc-test
-
-This template should help get you started developing with Vue 3 in Vite.
-
-## Recommended IDE Setup
-
-[VS Code](https://code.visualstudio.com/) + [Vue (Official)](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
-
-## Recommended Browser Setup
-
-- Chromium-based browsers (Chrome, Edge, Brave, etc.):
-  - [Vue.js devtools](https://chromewebstore.google.com/detail/vuejs-devtools/nhdogjmejiglipccpnnnanhbledajbpd) 
-  - [Turn on Custom Object Formatter in Chrome DevTools](http://bit.ly/object-formatters)
-- Firefox:
-  - [Vue.js devtools](https://addons.mozilla.org/en-US/firefox/addon/vue-js-devtools/)
-  - [Turn on Custom Object Formatter in Firefox DevTools](https://fxdx.dev/firefox-devtools-custom-object-formatters/)
-
-## Type Support for `.vue` Imports in TS
-
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) to make the TypeScript language service aware of `.vue` types.
-
-## Customize configuration
-
-See [Vite Configuration Reference](https://vite.dev/config/).
-
-## Project Setup
-
-```sh
-npm install
+# LogsCalc
+## Описание
+Выполненное в соответстии с требованиями трестовое задание
+## Запуск
 ```
-
-### Compile and Hot-Reload for Development
-
-```sh
+git clone ...
+npm install
 npm run dev
 ```
+## Соответствие требованиям задания
+## Функционал и реализация задания
+1. Реализован макет в соответствии со структурой в задании
+2. Добавлены 3 поля для цены, количества и суммы, которые динамически пересчитываются. Я понял формулировку "поле, что менялось раньше всех, должно пересчитаться согласно значению изменившегося поля", так что то поле, которое мы изменили первым становится ведущим для пересчета.
+3. Добавлена кнопка отправки формы, которая добавляет вычисленные поля в localStorage (с задержкой 1с) и в отдельном компоненте отображается содержимое хранилища
+4. Реализована система логирования, которая триггериться на ввод символов в поля формы (с зареджкой 300мс), на отправку формы (логируются отправленные данные, текущие на момент отправки данные, полученные данные и данные после запроса)
+5. Код опубликован на Github и задеплоен на github pages
 
-### Type-Check, Compile and Minify for Production
+## Стек
+1. Vue 3
+2. Typescript
 
-```sh
-npm run build
-```
+## Стили
+Написаны базовые стили для более приятного взаимодействия с интерфейсом
 
-### Lint with [ESLint](https://eslint.org/)
-
-```sh
-npm run lint
-```
+## Архитектура
+1. В качестве архитектуры выбрана простая модульная архитектура, где сущности разделены по их ответственности и модули изолированы
+2. Выделил в папке shared переиспользуемые компоненты и в папке features компоненты, несущие в себе основную логику приложения, также создал хуки, выполняющие все вычисления и имитацию работы с бэком
